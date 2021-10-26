@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hour">Hour</string>
+    <string name="condition">Condition</string>
+    <string name="tempC">°C</string>
+    <string name="tempF">°F</string>
+    <string name="search">Search</string>
+    <string name="temperatureC">Temperature (C)</string>
+    <string name="temperatureF">Temperature (F)</string>
+    <string name="feelC">Feels Like (C)</string>
+    <string name="feelF">Feels Like (F)</string>
+    <string name="not_selected">Not selected location</string>
+</resources>

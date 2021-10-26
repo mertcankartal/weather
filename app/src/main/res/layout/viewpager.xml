@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.weather.models.WeatherResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/home_bg">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="440dp"
+            android:layout_marginHorizontal="@dimen/card_margin_horizontal"
+            android:layout_marginTop="@dimen/card_margin_top"
+            app:cardBackgroundColor="@color/teal_200"
+            app:cardCornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_card">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/locationName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/card_location_margin_top"
+                    android:text="@{data.location.name}"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/home_location_textsize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textRealC"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/card_tempC_margin_top"
+                    android:text="@string/temperatureC"
+                    android:textAlignment="center"
+                    android:textColor="@color/temp"
+                    android:textSize="@dimen/home_temp_textsize"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/locationName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dataTempC"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/card_tempC_margin_top"
+                    android:text="@{String.valueOf(data.current.temp_c)}"
+                    android:textAlignment="center"
+                    android:textColor="@color/temp"
+                    android:textSize="@dimen/home_temp_textsize_data"
+                    app:layout_constraintStart_toEndOf="@id/textRealC"
+                    app:layout_constraintTop_toBottomOf="@id/locationName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textRealF"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/card_tempC_margin_top"
+                    android:text="@string/temperatureF"
+                    android:textAlignment="center"
+                    android:textColor="@color/temp"
+                    android:textSize="@dimen/home_temp_textsize"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textRealC" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dataTempF"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/card_tempC_margin_top"
+                    android:text="@{String.valueOf(data.current.temp_f)}"
+                    android:textAlignment="center"
+                    android:textColor="@color/temp"
+                    android:textSize="@dimen/home_temp_textsize_data"
+                    app:layout_constraintStart_toEndOf="@+id/textRealF"
+                    app:layout_constraintTop_toBottomOf="@id/dataTempC" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textFeelC"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/card_tempC_margin_top"
+                    android:text="@string/feelC"
+                    android:textAlignment="center"
+                    android:textColor="@color/feel"
+                    android:textSize="@dimen/home_feel_textsize"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textRealF" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dataFeelsLikeC"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/card_feelC_margin_top"
+                    android:text="@{String.valueOf(data.current.feelslike_c)}"
+                    android:textAlignment="center"
+                    android:textColor="@color/feel"
+                    android:textSize="@dimen/home_feel_textsize_data"
+                    app:layout_constraintStart_toEndOf="@id/textFeelC"
+                    app:layout_constraintTop_toBottomOf="@id/dataTempF" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textFeelF"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/card_feelC_margin_top"
+                    android:text="@string/feelF"
+                    android:textAlignment="center"
+                    android:textColor="@color/feel"
+                    android:textSize="@dimen/home_feel_textsize"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dataFeelsLikeC" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dataFeelLikeF"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/card_feelC_margin_top"
+                    android:text="@{String.valueOf(data.current.feelslike_f)}"
+                    android:textAlignment="center"
+                    android:textColor="@color/feel"
+                    android:textSize="@dimen/home_feel_textsize_data"
+                    app:layout_constraintStart_toEndOf="@id/textFeelF"
+                    app:layout_constraintTop_toBottomOf="@id/dataFeelsLikeC" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/conditionText"
+                    android:layout_width="150dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="@dimen/card_condition_margin_start"
+                    android:layout_marginTop="@dimen/card_condition_margin_top"
+                    android:gravity="center"
+                    android:text="@{data.current.condition.text}"
+                    android:textAlignment="center"
+                    android:textColor="@color/condition"
+                    android:textSize="@dimen/home_condition_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dataFeelLikeF" />
+
+                <ImageView
+                    android:id="@+id/conditionIcon"
+                    imageUrl="@{data.current.condition.icon}"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="@dimen/card_condition_image_margin_start"
+                    app:layout_constraintBottom_toBottomOf="@id/conditionText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/conditionText"
+                    app:layout_constraintTop_toTopOf="@+id/conditionText" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

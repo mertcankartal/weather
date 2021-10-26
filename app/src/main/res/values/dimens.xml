@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Padding-->
+    <dimen name="custom_padding">5dp</dimen>
+    <dimen name="act_padding">7dp</dimen>
+    <dimen name="act_padding_start">25dp</dimen>
+
+    <!--Margin-->
+
+    <dimen name="act_margin_top">32dp</dimen>
+    <dimen name="act_margin_horizontal">24dp</dimen>
+    <dimen name="viewPager_margin_horizontal">24dp</dimen>
+    <dimen name="viewPager_margin_vertical">24dp</dimen>
+    <dimen name="card_margin_horizontal">24dp</dimen>
+    <dimen name="card_margin_top">72dp</dimen>
+    <dimen name="card_location_margin_top">24dp</dimen>
+    <dimen name="card_tempC_margin_top">12dp</dimen>
+    <dimen name="card_feelC_margin_top">12dp</dimen>
+    <dimen name="card_condition_margin_top">48dp</dimen>
+    <dimen name="card_condition_margin_start">12dp</dimen>
+    <dimen name="card_condition_image_margin_start">12dp</dimen>
+
+
+    <!--Text Size-->
+    <dimen name="custom_textsize">14sp</dimen>
+    <dimen name="detail_hour_textsize">16sp</dimen>
+    <dimen name="detail_tempc_textsize">16sp</dimen>
+    <dimen name="detail_tempf_textsize">16sp</dimen>
+    <dimen name="home_location_textsize">24sp</dimen>
+    <dimen name="home_temp_textsize">18sp</dimen>
+    <dimen name="home_feel_textsize">18sp</dimen>
+    <dimen name="home_temp_textsize_data">15sp</dimen>
+    <dimen name="home_feel_textsize_data">15sp</dimen>
+    <dimen name="home_condition_text">20sp</dimen>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="detail"
+            type="com.example.weather.models.Hour" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detailHour"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@{detail.time}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/detail_hour_textsize"
+            app:layout_constraintBottom_toTopOf="@id/line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.45" />
+
+        <ImageView
+            android:id="@+id/detailWeatherIcon"
+            imageUrl="@{detail.condition.icon}"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toTopOf="@id/line"
+            app:layout_constraintStart_toEndOf="@id/detailHour"
+            app:layout_constraintTop_toTopOf="@id/detailHour"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detailHourTempC"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@{String.valueOf(detail.temp_c)}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/detail_tempc_textsize"
+            app:layout_constraintBottom_toTopOf="@id/line"
+            app:layout_constraintStart_toEndOf="@id/detailWeatherIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.15" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detailHourTempF"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@{String.valueOf(detail.temp_f)}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/detail_tempf_textsize"
+            app:layout_constraintBottom_toTopOf="@id/line"
+            app:layout_constraintStart_toEndOf="@id/detailHourTempC"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.15" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/detail_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailHour" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
